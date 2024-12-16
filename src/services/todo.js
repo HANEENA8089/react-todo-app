@@ -8,8 +8,10 @@ export function getAll() {
     return [
         {
             id: 1,
-            text: 'Learn Javascript',
-            completed: false
+            text: "Finish homework",
+            completed: false,
+            priority: "High",       
+            dueDate: "2024-12-31",  
         },
         {
             id: 2,

@@ -9,10 +9,18 @@ export default function TodoItem(props) {
     return (
         <li className={className}>
             <div className="checkbox">
-                <label>
-                    <CheckBox checked={data.completed} onChange={handleChange}/> {data.text}
-                </label>
+            <CheckBox checked={data.completed} onChange={handleChange} /> 
+                    {data.text}
+                    {/* Displaying the priority next to the task */}
+                    <span className="priority-label" style={{ marginLeft: '10px', fontWeight: 'bold', color: 'gray' }}>
+                        ({data.priority})
+                    </span>
+                    {/* Displaying the due date */}
+                    <span className="due-date-label" style={{ marginLeft: '10px', fontWeight: 'normal', color: 'gray' }}>
+                        {data.dueDate ? `Due: ${new Date(data.dueDate).toLocaleDateString()}` : ''}
+                    </span>
             </div>
         </li>
+        
     );
 }
